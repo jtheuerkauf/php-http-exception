@@ -1,34 +1,45 @@
 {
-	"name": "fuzz/http-exception",
-	"description": "A library containing a set of RESTful HTTP exceptions that use a consistent interface.",
-	"license": "MIT",
-	"authors": [
-		{
-			"name": "Fuzz Web",
-			"email": "opensource@fuzzproductions.com"
-		}
-	],
-	"require": {
-		"php": ">=7.0"
-	},
-	"require-dev": {
-		"phpunit/phpunit": "~5.6"
-	},
-	"autoload": {
-		"psr-4": {
-			"Fuzz\\HttpException\\": "src/",
-			"Fuzz\\HttpException\\Tests\\": "tests/"
-		}
-	},
-	"scripts": {
-		"test": [
-			"vendor/bin/phpunit"
-		],
-		"test-coverage": [
-			"vendor/bin/phpunit --coverage-html tests/coverage"
-		],
-		"open-coverage": [
-			"open -a \"Google Chrome\" tests/coverage/index.html"
-		]
-	}
+  "name": "jtheuerkauf/php-http-exception",
+  "description": "A NON-PSR-7 library containing a set of RESTful HTTP exceptions that use a consistent interface.",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Joe Theuerkauf",
+      "email": "joe@theuerkauf.dev"
+    },
+    {
+      "name": "Fuzz Web",
+      "email": "opensource@fuzzproductions.com"
+    }
+  ],
+  "replace": {
+    "fuzz/http-exception": "1.0.2"
+  },
+  "require": {
+    "php": ">=7.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": ">=5.6"
+  },
+  "autoload": {
+    "psr-4": {
+      "Fuzz\\HttpException\\": "src/",
+      "Fuzz\\HttpException\\Tests\\": "tests/"
+    }
+  },
+  "scripts": {
+    "test": [
+      "vendor/bin/phpunit"
+    ],
+    "test-coverage": [
+      "vendor/bin/phpunit --coverage-html tests/coverage"
+    ]
+  },
+  "keywords": [
+    "error",
+    "exception",
+    "general",
+    "generic",
+    "http"
+  ]
 }
