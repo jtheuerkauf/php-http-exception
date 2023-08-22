@@ -4,15 +4,50 @@ declare(strict_types=1);
 
 namespace Fuzz\HttpException;
 
-/**
- * Empty class providing the formal status phrase for 403
- */
-class ForbiddenHttpException extends AccessDeniedHttpException
+use Exception;
+
+class ForbiddenHttpException extends HttpException
 {
-	/**
-	 * Error code storage;
-	 *
-	 * @const string
-	 */
-	const ERROR = 'forbidden';
+    /**
+     * Error code storage;
+     *
+     * @const string
+     */
+    const ERROR = 'forbidden';
+    /**
+     * HTTP status code
+     *
+     * @const int
+     */
+    const HTTP_CODE = 403;
+
+    /**
+     * AccessDeniedHttpException constructor.
+     *
+     * @param string|null    $errorDescription
+     * @param array          $errorData
+     * @param string|null    $userTitle
+     * @param null           $userMessage
+     * @param array          $headers
+     * @param Exception|null $previous
+     */
+    public function __construct(
+        string $errorDescription = null,
+        array $errorData = [],
+        string $userTitle = null,
+        $userMessage = null,
+        array $headers = [],
+        Exception $previous = null
+    ) {
+        parent::__construct(
+            self::HTTP_CODE,
+            self::ERROR,
+            $errorDescription,
+            $errorData,
+            $userTitle,
+            $userMessage,
+            $headers,
+            $previous
+        );
+    }
 }
