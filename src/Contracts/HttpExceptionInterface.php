@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Fuzz\HttpException\Contracts;
 
 interface HttpExceptionInterface
