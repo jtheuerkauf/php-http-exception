@@ -40,8 +40,8 @@ class ForbiddenHttpException extends HttpException
         Exception $previous = null
     ) {
         parent::__construct(
-            self::HTTP_CODE,
-            self::ERROR,
+            static::HTTP_CODE,
+            static::ERROR,
             $errorDescription,
             $errorData,
             $userTitle,
